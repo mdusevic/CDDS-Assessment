@@ -1,0 +1,6 @@
+﻿  Main.cpp
+C:\Users\s200494\Desktop\Double-Linked_List\Double-Linked_List\Main.cpp(7,13): warning C4099: 'Node': type name first seen using 'class' now seen using 'struct'
+C:\Users\s200494\Desktop\Double-Linked_List\Double-Linked_List\Main.cpp(3): message : see declaration of 'Node'
+C:\Users\s200494\Desktop\Double-Linked_List\Double-Linked_List\Main.cpp(8,13): warning C4099: 'Node': type name first seen using 'class' now seen using 'struct'
+C:\Users\s200494\Desktop\Double-Linked_List\Double-Linked_List\Main.cpp(3): message : see declaration of 'Node'
+LINK : fatal error LNK1104: cannot open file 'raylib.lib'
