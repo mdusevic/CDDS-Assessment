@@ -82,6 +82,7 @@ bool HashFunction::IsPhoneNumberValid(std::string tel)
 // Inserts a new record
 void HashFunction::Insert()
 {
+	// Asks for input
 	SetConsoleTextAttribute(hConsole, DARKGRAY);
 	std::cout << " Enter the new record's name: ";
 	SetConsoleTextAttribute(hConsole, WHITE);
@@ -98,8 +99,10 @@ void HashFunction::Insert()
 
 	std::cout << std::endl;
 
+	// Validates name
 	if (IsNameValid(name))
 	{
+		// Validates phone number
 		if (IsPhoneNumberValid(tel))
 		{
 			Record newRecord;
@@ -133,8 +136,10 @@ void HashFunction::Insert()
 // Deletes the desired record
 void HashFunction::Delete()
 {
+	// If list is not empty
 	if (!IsListEmpty())
 	{
+		// Asks for input
 		SetConsoleTextAttribute(hConsole, DARKGRAY);
 		std::cout << " Enter the record's name to remove: ";
 		SetConsoleTextAttribute(hConsole, WHITE);
@@ -151,23 +156,41 @@ void HashFunction::Delete()
 
 		std::cout << std::endl;
 
-		int index = Hashing(tel);
-
-		for (auto const& i : table[index])
+		// Validates name
+		if (IsNameValid(name))
 		{
-			if (name == i.name)
+			// Validates phone number
+			if (IsPhoneNumberValid(tel))
 			{
-				SetConsoleTextAttribute(hConsole, LIGHTRED);
-				std::cout << "  DELETING ... " << i.name << ", " << i.tel << std::endl;
-				SetConsoleTextAttribute(hConsole, WHITE);
+				int index = Hashing(tel);
 
-				table[index].clear();
+				for (auto const& i : table[index])
+				{
+					if (name == i.name)
+					{
+						SetConsoleTextAttribute(hConsole, LIGHTRED);
+						std::cout << "  DELETING ... " << i.name << ", " << i.tel << std::endl;
+						SetConsoleTextAttribute(hConsole, WHITE);
+
+						table[index].clear();
+						return;
+					}
+				}
+
+				SetConsoleTextAttribute(hConsole, RED);
+				std::cout << " Input invalid, record does not exist." << std::endl;
+				SetConsoleTextAttribute(hConsole, WHITE);
 				return;
 			}
+
+			SetConsoleTextAttribute(hConsole, RED);
+			std::cout << " Input invalid, not a valid phone number" << std::endl;
+			SetConsoleTextAttribute(hConsole, WHITE);
+			return;
 		}
 
 		SetConsoleTextAttribute(hConsole, RED);
-		std::cout << " Input invalid, record does not exist." << std::endl;
+		std::cout << " Input invalid, not a valid name" << std::endl;
 		SetConsoleTextAttribute(hConsole, WHITE);
 		return;
 	}
@@ -183,8 +206,10 @@ void HashFunction::Delete()
 // Searchs table for desired record
 void HashFunction::Search()
 {
+	// If list is not empty
 	if (!IsListEmpty())
 	{
+		// Asks for input
 		SetConsoleTextAttribute(hConsole, DARKGRAY);
 		std::cout << " Enter the record's phone number: ";
 		SetConsoleTextAttribute(hConsole, WHITE);
@@ -194,6 +219,7 @@ void HashFunction::Search()
 
 		std::cout << std::endl;
 
+		// Validates phone number
 		if (IsPhoneNumberValid(tel))
 		{
 			int index = Hashing(tel);
@@ -230,10 +256,12 @@ void HashFunction::Search()
 // Prints contents of table
 void HashFunction::DisplayRecords()
 {
+	// If list is not empty
 	if (!IsListEmpty())
 	{
 		for (int i = 0; i < maxRecords; i++)
 		{
+			// This formats the index numbers to display two digits - '00'
 			if (i < 10)
 			{
 				SetConsoleTextAttribute(hConsole, YELLOW);
@@ -297,31 +325,31 @@ void HashFunction::MainMenu()
 	std::cin >> option;
 	switch (option)
 	{
-		// Takes user to display page 
+	// Takes user to display page 
 	case 1:
 		DisplayRecordsPage();
 		break;
 
-		// Takes user to search page
+	// Takes user to search page
 	case 2:
 		SearchRecordPage();
 		break;
 
-		// Takes user to create page
+	// Takes user to create page
 	case 3:
 		CreateRecordPage();
 		break;
 
-		// Takes user to remove page
+	// Takes user to remove page
 	case 4:
 		RemoveRecordPage();
 		break;
 
-		// Exits the loop
+	// Exits the loop
 	case 5:
 		break;
 
-		// If input is invalid, user is asked again
+	// If input is invalid, user is asked again
 	default:
 		ErrorMessage();
 		MainMenu();

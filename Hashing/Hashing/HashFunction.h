@@ -6,6 +6,7 @@
 #include <list>
 #include <string>
 
+// Record class
 class Record
 {
 public:
@@ -13,6 +14,7 @@ public:
 	std::string tel;
 };
 
+// Hash Function class
 class HashFunction
 {
 public:

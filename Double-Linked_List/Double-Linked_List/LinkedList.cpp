@@ -24,7 +24,7 @@ void LinkedList::Init()
 	tail = NULL;
 }
 
-// Checks is list is empty, returns a bool value
+// Checks if list is empty, returns a bool value
 bool LinkedList::IsListEmpty()
 {
 	if (head == NULL)
@@ -437,6 +437,7 @@ void LinkedList::PrintNodeCount()
 // Prints contents of linked list
 void LinkedList::PrintList()
 {
+	// If list is not empty
 	if (!IsListEmpty())
 	{
 		Node* temp = head;
