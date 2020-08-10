@@ -1,9 +1,9 @@
 #pragma once
 
-// Variables for each record
-#define NAME_SIZE 30
-#define TEL_SIZE 20
-#define ADD_SIZE 20
+// Limits
+#define NAME_SIZE 20
+#define TEL_SIZE 10
+#define HASHTABLE_SIZE 20
 
 // Colour list for text
 #define BLACK			0

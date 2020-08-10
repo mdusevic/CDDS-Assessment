@@ -1,2 +1,5 @@
-﻿  Main.cpp
-  Hashing.vcxproj -> C:\Users\Mara Dusevic\Desktop\Hashing\Debug\Hashing.exe
+﻿  HashFunction.cpp
+C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Hashing\HashFunction.cpp(46,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Hashing\HashFunction.cpp(48,6): warning C4805: '==': unsafe mix of type 'char' and type 'bool' in operation
+C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Hashing\HashFunction.cpp(70,20): warning C4018: '<': signed/unsigned mismatch
+  Hashing.vcxproj -> C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Debug\Hashing.exe
