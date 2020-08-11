@@ -26,12 +26,22 @@ int HashFunction::Hashing(std::string tel)
 // Checks if list is empty, returns a bool value
 bool HashFunction::IsListEmpty()
 {
-	if (table->empty())
+	int count{};
+
+	for (int i = 0; i < maxRecords; i++)
 	{
-		return true;
+		for (Record record : table[i])
+		{
+			count++;
+		}
 	}
 
-	return false;
+	if (count > 0)
+	{
+		return false;
+	}
+
+	return true;
 }
 
 // Checks if name is valid, returns a bool value
@@ -72,6 +82,25 @@ bool HashFunction::IsPhoneNumberValid(std::string tel)
 		{
 			return false;
 		}
+	}
+
+	// If the telephone number already exists
+	int count{};
+
+	for (int i = 0; i < maxRecords; i++)
+	{
+		for (Record record : table[i])
+		{
+			if (record.tel == tel)
+			{
+				count++;
+			}
+		}
+	}
+
+	if (count > 0)
+	{
+		return false;
 	}
 
 	return true;
@@ -256,7 +285,6 @@ void HashFunction::Search()
 // Prints contents of table
 void HashFunction::DisplayRecords()
 {
-	// If list is not empty
 	if (!IsListEmpty())
 	{
 		for (int i = 0; i < maxRecords; i++)
@@ -289,7 +317,7 @@ void HashFunction::DisplayRecords()
 
 		return;
 	}
-
+	
 	SetConsoleTextAttribute(hConsole, RED);
 	std::cout << " Input invalid, list is empty." << std::endl;
 	SetConsoleTextAttribute(hConsole, WHITE);
