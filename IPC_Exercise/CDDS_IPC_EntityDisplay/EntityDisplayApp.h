@@ -1,7 +1,11 @@
 #pragma once
+
+#include "FixWindows.h"
+#include <windows.h>
 #include <vector>
 
-struct Entity {
+struct Entity
+{
 	float x = 0, y = 0;
 	float rotation = 0;
 	float speed = 0;
@@ -9,7 +13,8 @@ struct Entity {
 	float size = 1;
 };
 
-class EntityDisplayApp  {
+class EntityDisplayApp
+{
 public:
 	EntityDisplayApp(int screenWidth = 800, int screenHeight = 450);
 	~EntityDisplayApp();
@@ -20,10 +25,16 @@ public:
 	void Update(float deltaTime);
 	void Draw();
 
+	HANDLE fileEntity;
+	HANDLE fileEntitySize;
+
 protected:
 	int m_screenWidth;
 	int m_screenHeight;
 
 	// an array of an unknown number of entities
 	std::vector<Entity> m_entities;
+
+	int* entitySize;
+	Entity* sharedData;
 };

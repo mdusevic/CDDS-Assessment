@@ -1,7 +1,10 @@
 #include "EntityEditorApp.h"
+#include "FixWindows.h"
+#include "raylib.h"
 #include <random>
 #include <time.h>
-#include "raylib.h"
+#include <windows.h>
+#include <iostream>
 
 #define RAYGUI_IMPLEMENTATION
 #define RAYGUI_SUPPORT_ICONS
@@ -35,11 +38,59 @@ bool EntityEditorApp::Startup()
 		entity.b = rand() % 255;
 	}
 
+	// Opening shared memory block
+	fileEntity = CreateFileMapping(INVALID_HANDLE_VALUE, // a handle to an existing virtual file, or invalid
+		nullptr, // optional security attributes
+		PAGE_READWRITE, // read/write access control
+		0, sizeof(Entity) * ENTITY_COUNT, // size of the memory block, 
+		L"SharedMemoryEntity");
+
+	fileEntitySize = CreateFileMapping(INVALID_HANDLE_VALUE, // a handle to an existing virtual file, or invalid
+		nullptr, // optional security attributes
+		PAGE_READWRITE, // read/write access control
+		0, sizeof(int), // size of the memory block, 
+		L"SharedMemoryEntitySize");
+
+	if (fileEntity == nullptr || fileEntitySize == nullptr)
+	{
+		std::cout << "Server - Could not create file mapping object: " << GetLastError() << std::endl;
+		return false;
+	}
+
+	// Map the memory from the shared block to a pointer we can manipulate
+	sharedData = (Entity*)MapViewOfFile(fileEntity,
+		FILE_MAP_ALL_ACCESS,
+		0,
+		0,
+		sizeof(Entity) * ENTITY_COUNT);
+
+	sharedSize = (int*)MapViewOfFile(fileEntitySize,
+		FILE_MAP_ALL_ACCESS,
+		0,
+		0,
+		sizeof(int));
+
+	if (sharedData == nullptr || sharedSize == nullptr)
+	{
+		std::cout << "Server - Could not map view of file: " << GetLastError() << std::endl;
+		CloseHandle(fileEntity);
+		CloseHandle(fileEntitySize);
+		return false;
+	}  
+
 	return true;
 }
 
 void EntityEditorApp::Shutdown()
 {
+	// Unmap the memory block since we're done with it
+	UnmapViewOfFile(sharedData);
+
+	// Close the shared file
+	CloseHandle(fileEntity);
+
+	CloseHandle(fileEntitySize);
+
 	CloseWindow();
 }
 
@@ -118,6 +169,14 @@ void EntityEditorApp::Update(float deltaTime)
 			m_entities[i].y += m_screenHeight;
 		}
 	}
+
+	// Writing to shared memory block
+	for (int i = 0; i < 10; i++)
+	{
+		sharedData[i] = m_entities[i];
+	}
+
+	*sharedSize = ENTITY_COUNT;
 }
 
 void EntityEditorApp::Draw()

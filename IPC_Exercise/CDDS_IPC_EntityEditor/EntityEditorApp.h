@@ -1,7 +1,11 @@
 #pragma once
+
+#include "FixWindows.h"
+#include <windows.h>
 #include <vector>
 
-struct Entity {
+struct Entity
+{
 	float x = 0, y = 0;
 	float rotation = 0;
 	float speed = 0;
@@ -9,7 +13,8 @@ struct Entity {
 	float size = 1;
 };
 
-class EntityEditorApp {
+class EntityEditorApp
+{
 public:
 	EntityEditorApp(int screenWidth = 800, int screenHeight = 450);
 	~EntityEditorApp();
@@ -20,6 +25,9 @@ public:
 	void Update(float deltaTime);
 	void Draw();
 
+	HANDLE fileEntity;
+	HANDLE fileEntitySize;
+
 protected:
 	int m_screenWidth;
 	int m_screenHeight;
@@ -27,4 +35,7 @@ protected:
 	// define a block of entities that should be shared
 	enum { ENTITY_COUNT = 10 };
 	Entity m_entities[ENTITY_COUNT];
+
+	int* sharedSize;
+	Entity* sharedData;
 };
