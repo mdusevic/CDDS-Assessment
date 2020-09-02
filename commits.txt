@@ -1,0 +1,47 @@
+commit 4014b418aa7451a0ab1fbe8305577fd0a6ae523e
+Author: Mara Dusevic <s200494@students.aie.edu.au>
+Date:   Wed Sep 2 15:52:27 2020 +1000
+
+    Fixed changes
+
+commit e1eff536fa183a1ac23480405d47c0056923d368
+Author: Mara Dusevic <s200494@students.aie.edu.au>
+Date:   Wed Sep 2 14:43:09 2020 +1000
+
+    Finished IPC, created release
+
+commit 53257d623860cfbb68d687991ee6e8e22dc67e7b
+Author: Mara Dusevic <s200494@students.aie.edu.au>
+Date:   Tue Aug 11 21:03:34 2020 +1000
+
+    Fixed Issues
+
+commit 2b19d7c3af5690a8399b33784657b86c61ede4cd
+Author: Mara Dusevic <s200494@students.aie.edu.au>
+Date:   Tue Aug 11 04:41:24 2020 +1000
+
+    Release added, files fixed
+
+commit 8d64e5053d943f3b88d69f5ae897c32ba84f89e0
+Author: Mara Dusevic <s200494@students.aie.edu.au>
+Date:   Tue Aug 11 04:12:55 2020 +1000
+
+    Added README
+
+commit 7dcb1765f695078c44696eb754935771c3cfc2f6
+Author: Mara Dusevic <s200494@students.aie.edu.au>
+Date:   Tue Aug 11 03:32:11 2020 +1000
+
+    Updated Hashing Project
+
+commit 3f50d6dd287a3b5d05ba6adf2448c6684964f306
+Author: Mara Dusevic <s200494@students.aie.edu.au>
+Date:   Mon Aug 10 17:50:41 2020 +1000
+
+    Added functions
+
+commit fa3b421e43e7a6723d675c587a97985eff7fd076
+Author: Mara Dusevic <s200494@students.aie.edu.au>
+Date:   Fri Aug 7 22:42:47 2020 +1000
+
+    Added Projects

@@ -130,7 +130,4 @@ C:\Users\s200494\Desktop\CDDS-Assessment\IPC_Exercise\CDDS_IPC_EntityEditor\Enti
 C:\Users\s200494\Desktop\CDDS-Assessment\IPC_Exercise\CDDS_IPC_EntityEditor\EntityEditorApp.cpp(132,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\s200494\Desktop\CDDS-Assessment\IPC_Exercise\CDDS_IPC_EntityEditor\EntityEditorApp.cpp(158,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\s200494\Desktop\CDDS-Assessment\IPC_Exercise\CDDS_IPC_EntityEditor\EntityEditorApp.cpp(165,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  main.cpp
-  Generating Code...
-  LINK : C:\Users\s200494\Desktop\CDDS-Assessment\IPC_Exercise\bin\Win32\Debug\CDDS_IPC_EntityEditor.exe not found or not built by the last incremental link; performing full link
   CDDS_IPC_EntityEditor.vcxproj -> C:\Users\s200494\Desktop\CDDS-Assessment\IPC_Exercise\bin\Win32\Debug\CDDS_IPC_EntityEditor.exe

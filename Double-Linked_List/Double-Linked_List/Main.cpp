@@ -3,6 +3,15 @@
 // Main Function
 int main()
 {
+
+	{
+
+		LinkedList list;
+		list.
+
+	}
+
+
 	bool linkedListRunning = true;
 
 	LinkedList linkedList;

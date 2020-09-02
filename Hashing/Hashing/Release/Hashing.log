@@ -1,10 +1,1 @@
-﻿  HashFunction.cpp
-C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Hashing\HashFunction.cpp(55,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Hashing\HashFunction.cpp(57,6): warning C4805: '==': unsafe mix of type 'char' and type 'bool' in operation
-C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Hashing\HashFunction.cpp(79,20): warning C4018: '<': signed/unsigned mismatch
-  Generating code
-  13 of 204 functions ( 6.4%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  Hashing.vcxproj -> C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Release\Hashing.exe
+﻿  Hashing.vcxproj -> C:\Users\s200494\Desktop\CDDS-Assessment\Hashing\Release\Hashing.exe

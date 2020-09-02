@@ -171,7 +171,7 @@ void EntityEditorApp::Update(float deltaTime)
 	}
 
 	// Writing to shared memory block
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < ENTITY_COUNT; i++)
 	{
 		sharedData[i] = m_entities[i];
 	}
