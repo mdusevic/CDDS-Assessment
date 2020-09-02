@@ -66,11 +66,29 @@ void EntityDisplayApp::Update(float deltaTime)
 {
 	// Reading data from shared memory block
 
-	sharedData = (Entity*)MapViewOfFile(fileEntity, FILE_MAP_ALL_ACCESS, 0, 0, sizeof(Entity) * *entitySize);
-
 	entitySize = (int*)MapViewOfFile(fileEntitySize, FILE_MAP_ALL_ACCESS, 0, 0, sizeof(int));
 
-	for (int i = 0; i < *entitySize; i++)
+	if (entitySize == nullptr)
+		return;
+
+	int eSize = *entitySize;
+	sharedData = (Entity*)MapViewOfFile(fileEntity, FILE_MAP_ALL_ACCESS, 0, 0, sizeof(Entity) * eSize);
+	
+	if (sharedData == nullptr)
+		return;
+
+	// resize the m_entities of the size changes.
+	if (*entitySize != m_entities.size())
+	{
+		m_entities.clear();
+		for (int i = 0; i < *entitySize; i++)
+		{
+			Entity temp;
+			m_entities.push_back(temp);
+		}
+	}
+
+	for (int i = 0; i < eSize; i++)
 	{
 		m_entities[i] = sharedData[i];
 	}

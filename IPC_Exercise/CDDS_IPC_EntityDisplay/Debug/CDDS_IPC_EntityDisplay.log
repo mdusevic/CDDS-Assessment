@@ -1,2 +1,5 @@
 ﻿  EntityDisplayApp.cpp
+  main.cpp
+  Generating Code...
+  LINK : C:\Users\s200494\Desktop\CDDS-Assessment\IPC_Exercise\bin\Win32\Debug\CDDS_IPC_EntityDisplay.exe not found or not built by the last incremental link; performing full link
   CDDS_IPC_EntityDisplay.vcxproj -> C:\Users\s200494\Desktop\CDDS-Assessment\IPC_Exercise\bin\Win32\Debug\CDDS_IPC_EntityDisplay.exe
