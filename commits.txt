@@ -1,3 +1,21 @@
+commit f5c8cb4bf3099716f7d5a95b017c21991b36ed05
+Author: Mara Dusevic <s200494@students.aie.edu.au>
+Date:   Thu Sep 3 23:09:46 2020 +1000
+
+    Removed files
+
+commit 85b444eec45d4fefe8ee6798fd2cc3739e8b1e7d
+Author: Mara Dusevic <s200494@students.aie.edu.au>
+Date:   Thu Sep 3 23:06:02 2020 +1000
+
+    Fixed issues with projects, updated releases
+
+commit a5a1d95c61cc42d51f883e04232799a7499f9b5a
+Author: Mara Dusevic <s200494@students.aie.edu.au>
+Date:   Wed Sep 2 16:56:32 2020 +1000
+
+    Fixed Issues
+
 commit 4014b418aa7451a0ab1fbe8305577fd0a6ae523e
 Author: Mara Dusevic <s200494@students.aie.edu.au>
 Date:   Wed Sep 2 15:52:27 2020 +1000
