@@ -2,4 +2,7 @@
 C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Hashing\HashFunction.cpp(55,20): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Hashing\HashFunction.cpp(57,6): warning C4805: '==': unsafe mix of type 'char' and type 'bool' in operation
 C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Hashing\HashFunction.cpp(79,20): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+  Generating Code...
+  LINK : C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Debug\Hashing.exe not found or not built by the last incremental link; performing full link
   Hashing.vcxproj -> C:\Users\Mara Dusevic\Desktop\CDDS-Assessment\Hashing\Debug\Hashing.exe

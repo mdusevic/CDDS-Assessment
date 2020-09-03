@@ -21,23 +21,13 @@ public:
 	// Console Handle
 	HANDLE hConsole;
 
-	// Menu Functions
-	void MainMenu();
-	void DisplayMenu();
-	void SearchNodeMenu();
-	void CreateNodeMenu();
-	void RemoveNodeMenu();
-	void ExitMenu();
-	void ErrorMessage();
-	void Pause();
-
-protected:
 	// Other Functions
 	void Init();
 	bool IsListEmpty();
 	Node* FirstNode();
 	Node* LastNode();
 	int NodeCount();
+	void Swap(Node* node_1, Node* node_2);
 	void BubbleSort();
 
 	// Insert Functions
@@ -60,5 +50,6 @@ protected:
 	void PrintNodeCount();
 	void PrintList();
 
+protected:
 private:
 };
